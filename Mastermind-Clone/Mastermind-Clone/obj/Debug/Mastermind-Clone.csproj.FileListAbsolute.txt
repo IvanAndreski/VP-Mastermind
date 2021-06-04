@@ -1,0 +1,11 @@
+F:\Ivan\documents\Skolo\Finki\semestar_4\VP\Project\Mastermind-Clone\Mastermind-Clone\bin\Debug\Mastermind-Clone.exe.config
+F:\Ivan\documents\Skolo\Finki\semestar_4\VP\Project\Mastermind-Clone\Mastermind-Clone\bin\Debug\Mastermind-Clone.exe
+F:\Ivan\documents\Skolo\Finki\semestar_4\VP\Project\Mastermind-Clone\Mastermind-Clone\bin\Debug\Mastermind-Clone.pdb
+F:\Ivan\documents\Skolo\Finki\semestar_4\VP\Project\Mastermind-Clone\Mastermind-Clone\obj\Debug\Mastermind-Clone.csproj.AssemblyReference.cache
+F:\Ivan\documents\Skolo\Finki\semestar_4\VP\Project\Mastermind-Clone\Mastermind-Clone\obj\Debug\Mastermind_Clone.Properties.Resources.resources
+F:\Ivan\documents\Skolo\Finki\semestar_4\VP\Project\Mastermind-Clone\Mastermind-Clone\obj\Debug\Mastermind-Clone.csproj.GenerateResource.cache
+F:\Ivan\documents\Skolo\Finki\semestar_4\VP\Project\Mastermind-Clone\Mastermind-Clone\obj\Debug\Mastermind-Clone.csproj.CoreCompileInputs.cache
+F:\Ivan\documents\Skolo\Finki\semestar_4\VP\Project\Mastermind-Clone\Mastermind-Clone\obj\Debug\Mastermind-Clone.exe
+F:\Ivan\documents\Skolo\Finki\semestar_4\VP\Project\Mastermind-Clone\Mastermind-Clone\obj\Debug\Mastermind-Clone.pdb
+F:\Ivan\documents\Skolo\Finki\semestar_4\VP\Project\Mastermind-Clone\Mastermind-Clone\obj\Debug\Mastermind_Clone.Form1.resources
+F:\Ivan\documents\Skolo\Finki\semestar_4\VP\Project\Mastermind-Clone\Mastermind-Clone\obj\Debug\Mastermind_Clone.Forms.Game.resources
