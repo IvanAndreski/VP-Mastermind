@@ -1,4 +1,5 @@
-﻿using System;
+﻿using Mastermind_Clone.Forms;
+using System;
 using System.Collections.Generic;
 using System.ComponentModel;
 using System.Data;
@@ -12,6 +13,15 @@ namespace Mastermind_Clone {
     public partial class Form1 : Form {
         public Form1() {
             InitializeComponent();
+
+            ChangeForm();
+        }
+
+        private void ChangeForm() {
+            Game game = new Game();
+            game.TopLevel = false;
+            panel1.Controls.Add(game);
+            game.Show();
         }
     }
 }
