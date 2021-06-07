@@ -14,17 +14,18 @@ namespace Mastermind_Clone.Forms {
         public Scene Scene { get; set; }
         public Game() {
             InitializeComponent();
-
-            Scene = new Scene(panel3.Location);
-            panel1.Invalidate();
+            DoubleBuffered = true;
+            Scene = new Scene(new Point(10,5), new Point(250,5),new Point(547,365));
+            
         }
 
-        private void panel1_Paint(object sender, PaintEventArgs e) {
-            panel3.Invalidate();
-        }
+        
 
-        private void panel3_Paint(object sender, PaintEventArgs e) {
+        private void Game_Paint(object sender, PaintEventArgs e)
+        {
             Scene.Draw(e.Graphics);
         }
+
+        
     }
 }

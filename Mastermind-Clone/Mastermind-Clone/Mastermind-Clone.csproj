@@ -59,7 +59,7 @@
       <DependentUpon>Game.cs</DependentUpon>
     </Compile>
     <Compile Include="Models\Circle.cs" />
-    <Compile Include="Models\Guess.cs" />
+    <Compile Include="Models\Container.cs" />
     <Compile Include="Models\GuessCircle.cs" />
     <Compile Include="Models\PickCircle.cs" />
     <Compile Include="Models\Scene.cs" />
