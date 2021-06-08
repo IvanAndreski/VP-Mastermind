@@ -62,7 +62,11 @@
     <Compile Include="Models\Container.cs" />
     <Compile Include="Models\GuessCircle.cs" />
     <Compile Include="Models\PickCircle.cs" />
+    <Compile Include="Models\Result.cs" />
     <Compile Include="Models\Scene.cs" />
+    <Compile Include="Models\VerticalProgressBar.cs">
+      <SubType>Component</SubType>
+    </Compile>
     <Compile Include="Program.cs" />
     <Compile Include="Properties\AssemblyInfo.cs" />
     <EmbeddedResource Include="Form1.resx">

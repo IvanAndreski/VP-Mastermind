@@ -24,71 +24,98 @@ namespace Mastermind_Clone.Forms {
         /// the contents of this method with the code editor.
         /// </summary>
         private void InitializeComponent() {
+            this.components = new System.ComponentModel.Container();
             System.ComponentModel.ComponentResourceManager resources = new System.ComponentModel.ComponentResourceManager(typeof(Game));
-            this.progressBar1 = new System.Windows.Forms.ProgressBar();
-            this.button1 = new System.Windows.Forms.Button();
-            this.button2 = new System.Windows.Forms.Button();
-            this.button3 = new System.Windows.Forms.Button();
+            this.btnMainMenu = new System.Windows.Forms.Button();
+            this.btnExitGame = new System.Windows.Forms.Button();
+            this.btnRestartGame = new System.Windows.Forms.Button();
+            this.timerUpdateProgressBar = new System.Windows.Forms.Timer(this.components);
+            this.btnCheckGuess = new System.Windows.Forms.Button();
+            this.verticalProgressBarGameTimeLeft = new Mastermind_Clone.Models.VerticalProgressBar();
             this.SuspendLayout();
             // 
-            // progressBar1
+            // btnMainMenu
             // 
-            this.progressBar1.Location = new System.Drawing.Point(657, 5);
-            this.progressBar1.Margin = new System.Windows.Forms.Padding(4);
-            this.progressBar1.Name = "progressBar1";
-            this.progressBar1.Size = new System.Drawing.Size(45, 605);
-            this.progressBar1.TabIndex = 11;
+            this.btnMainMenu.Location = new System.Drawing.Point(608, 200);
+            this.btnMainMenu.Margin = new System.Windows.Forms.Padding(2);
+            this.btnMainMenu.Name = "btnMainMenu";
+            this.btnMainMenu.Size = new System.Drawing.Size(104, 19);
+            this.btnMainMenu.TabIndex = 12;
+            this.btnMainMenu.Text = "Main Menu";
+            this.btnMainMenu.UseVisualStyleBackColor = true;
             // 
-            // button1
+            // btnExitGame
             // 
-            this.button1.Location = new System.Drawing.Point(811, 246);
-            this.button1.Name = "button1";
-            this.button1.Size = new System.Drawing.Size(139, 23);
-            this.button1.TabIndex = 12;
-            this.button1.Text = "Main Menu";
-            this.button1.UseVisualStyleBackColor = true;
+            this.btnExitGame.Location = new System.Drawing.Point(608, 266);
+            this.btnExitGame.Margin = new System.Windows.Forms.Padding(2);
+            this.btnExitGame.Name = "btnExitGame";
+            this.btnExitGame.Size = new System.Drawing.Size(104, 19);
+            this.btnExitGame.TabIndex = 13;
+            this.btnExitGame.Text = "Exit";
+            this.btnExitGame.UseVisualStyleBackColor = true;
             // 
-            // button2
+            // btnRestartGame
             // 
-            this.button2.Location = new System.Drawing.Point(811, 328);
-            this.button2.Name = "button2";
-            this.button2.Size = new System.Drawing.Size(139, 23);
-            this.button2.TabIndex = 13;
-            this.button2.Text = "Exit";
-            this.button2.UseVisualStyleBackColor = true;
+            this.btnRestartGame.Location = new System.Drawing.Point(608, 233);
+            this.btnRestartGame.Margin = new System.Windows.Forms.Padding(2);
+            this.btnRestartGame.Name = "btnRestartGame";
+            this.btnRestartGame.Size = new System.Drawing.Size(104, 19);
+            this.btnRestartGame.TabIndex = 14;
+            this.btnRestartGame.Text = "Restart";
+            this.btnRestartGame.UseVisualStyleBackColor = true;
             // 
-            // button3
+            // timerUpdateProgressBar
             // 
-            this.button3.Location = new System.Drawing.Point(811, 287);
-            this.button3.Name = "button3";
-            this.button3.Size = new System.Drawing.Size(139, 23);
-            this.button3.TabIndex = 14;
-            this.button3.Text = "Restart";
-            this.button3.UseVisualStyleBackColor = true;
+            this.timerUpdateProgressBar.Interval = 1000;
+            this.timerUpdateProgressBar.Tick += new System.EventHandler(this.timerUpdateProgressBar_Tick);
+            // 
+            // btnCheckGuess
+            // 
+            this.btnCheckGuess.Location = new System.Drawing.Point(608, 177);
+            this.btnCheckGuess.Margin = new System.Windows.Forms.Padding(2);
+            this.btnCheckGuess.Name = "btnCheckGuess";
+            this.btnCheckGuess.Size = new System.Drawing.Size(104, 19);
+            this.btnCheckGuess.TabIndex = 16;
+            this.btnCheckGuess.Text = "Check Guess";
+            this.btnCheckGuess.UseVisualStyleBackColor = true;
+            this.btnCheckGuess.Click += new System.EventHandler(this.btnCheckGuess_Click);
+            // 
+            // verticalProgressBarGameTimeLeft
+            // 
+            this.verticalProgressBarGameTimeLeft.ForeColor = System.Drawing.Color.IndianRed;
+            this.verticalProgressBarGameTimeLeft.Location = new System.Drawing.Point(493, 4);
+            this.verticalProgressBarGameTimeLeft.Name = "verticalProgressBarGameTimeLeft";
+            this.verticalProgressBarGameTimeLeft.Size = new System.Drawing.Size(34, 492);
+            this.verticalProgressBarGameTimeLeft.Style = System.Windows.Forms.ProgressBarStyle.Continuous;
+            this.verticalProgressBarGameTimeLeft.TabIndex = 15;
             // 
             // Game
             // 
-            this.AutoScaleDimensions = new System.Drawing.SizeF(8F, 16F);
+            this.AutoScaleDimensions = new System.Drawing.SizeF(6F, 13F);
             this.AutoScaleMode = System.Windows.Forms.AutoScaleMode.Font;
             this.BackgroundImage = ((System.Drawing.Image)(resources.GetObject("$this.BackgroundImage")));
-            this.ClientSize = new System.Drawing.Size(1045, 617);
-            this.Controls.Add(this.button3);
-            this.Controls.Add(this.button2);
-            this.Controls.Add(this.button1);
-            this.Controls.Add(this.progressBar1);
+            this.ClientSize = new System.Drawing.Size(784, 501);
+            this.Controls.Add(this.btnCheckGuess);
+            this.Controls.Add(this.verticalProgressBarGameTimeLeft);
+            this.Controls.Add(this.btnRestartGame);
+            this.Controls.Add(this.btnExitGame);
+            this.Controls.Add(this.btnMainMenu);
             this.FormBorderStyle = System.Windows.Forms.FormBorderStyle.None;
-            this.Margin = new System.Windows.Forms.Padding(4);
             this.Name = "Game";
             this.Text = "Game";
             this.Paint += new System.Windows.Forms.PaintEventHandler(this.Game_Paint);
+            this.MouseClick += new System.Windows.Forms.MouseEventHandler(this.Game_MouseClick);
+            this.MouseMove += new System.Windows.Forms.MouseEventHandler(this.Game_MouseMove);
             this.ResumeLayout(false);
 
         }
 
         #endregion
-        private System.Windows.Forms.ProgressBar progressBar1;
-        private System.Windows.Forms.Button button1;
-        private System.Windows.Forms.Button button2;
-        private System.Windows.Forms.Button button3;
+        private System.Windows.Forms.Button btnMainMenu;
+        private System.Windows.Forms.Button btnExitGame;
+        private System.Windows.Forms.Button btnRestartGame;
+        private System.Windows.Forms.Timer timerUpdateProgressBar;
+        private Models.VerticalProgressBar verticalProgressBarGameTimeLeft;
+        private System.Windows.Forms.Button btnCheckGuess;
     }
 }
