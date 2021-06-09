@@ -20,3 +20,4 @@ D:\Git\Repositories\VP-Mastermind\Mastermind-Clone\Mastermind-Clone\obj\Debug\Ma
 D:\Git\Repositories\VP-Mastermind\Mastermind-Clone\Mastermind-Clone\obj\Debug\Mastermind-Clone.csproj.CoreCompileInputs.cache
 D:\Git\Repositories\VP-Mastermind\Mastermind-Clone\Mastermind-Clone\obj\Debug\Mastermind-Clone.exe
 D:\Git\Repositories\VP-Mastermind\Mastermind-Clone\Mastermind-Clone\obj\Debug\Mastermind-Clone.pdb
+F:\Ivan\documents\Skolo\Finki\semestar_4\VP\Project\Mastermind-Clone\Mastermind-Clone\obj\Debug\Mastermind_Clone.Forms.Meni.resources

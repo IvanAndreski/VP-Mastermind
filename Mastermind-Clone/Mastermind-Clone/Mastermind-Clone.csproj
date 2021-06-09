@@ -58,10 +58,14 @@
     <Compile Include="Forms\Game.Designer.cs">
       <DependentUpon>Game.cs</DependentUpon>
     </Compile>
+    <Compile Include="Forms\Meni.cs">
+      <SubType>Form</SubType>
+    </Compile>
+    <Compile Include="Forms\Meni.Designer.cs">
+      <DependentUpon>Meni.cs</DependentUpon>
+    </Compile>
     <Compile Include="Models\Circle.cs" />
     <Compile Include="Models\Container.cs" />
-    <Compile Include="Models\GuessCircle.cs" />
-    <Compile Include="Models\PickCircle.cs" />
     <Compile Include="Models\Result.cs" />
     <Compile Include="Models\Scene.cs" />
     <Compile Include="Models\VerticalProgressBar.cs">
@@ -74,6 +78,9 @@
     </EmbeddedResource>
     <EmbeddedResource Include="Forms\Game.resx">
       <DependentUpon>Game.cs</DependentUpon>
+    </EmbeddedResource>
+    <EmbeddedResource Include="Forms\Meni.resx">
+      <DependentUpon>Meni.cs</DependentUpon>
     </EmbeddedResource>
     <EmbeddedResource Include="Properties\Resources.resx">
       <Generator>ResXFileCodeGenerator</Generator>
@@ -97,6 +104,10 @@
   <ItemGroup>
     <None Include="App.config" />
   </ItemGroup>
-  <ItemGroup />
+  <ItemGroup>
+    <Content Include="Imgs\ice.png" />
+    <Content Include="Imgs\pattern.png" />
+    <Content Include="Imgs\wood.png" />
+  </ItemGroup>
   <Import Project="$(MSBuildToolsPath)\Microsoft.CSharp.targets" />
 </Project>

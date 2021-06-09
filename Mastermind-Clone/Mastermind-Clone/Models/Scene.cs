@@ -1,9 +1,5 @@
 ﻿using System;
-using System.Collections.Generic;
 using System.Drawing;
-using System.Linq;
-using System.Text;
-using System.Threading.Tasks;
 
 namespace Mastermind_Clone.Models {
     public class Scene {
@@ -19,14 +15,11 @@ namespace Mastermind_Clone.Models {
         public Random Random { get; set; }
 
         public static readonly Color[] PALETTE = { Color.Red, Color.Orange, Color.Yellow, Color.Green, Color.Turquoise, Color.Blue, Color.Magenta, Color.Purple };
+        public static readonly Color EmptyCircleColor = Color.Gray;
 
         public Scene(Point guess, Point progress, Point pick) {
             Random = new Random();
-            Color[] temp = new Color[4];
-            for (int i = 0; i < 4; i++) {
-                temp[i] = PALETTE[Random.Next(8)];
-            }
-            Result = new Result(temp);
+            Result = new Result(GenerateResultArray());
             this.ResetCurrentGuess();
 
             PanelGuessTopLeft = guess;
@@ -36,17 +29,20 @@ namespace Mastermind_Clone.Models {
             Guesses = new Container[8];
             ProgresArray = new Container[8];
             Picks = new Container[2];
-            for (int i = 0; i < 8; i++) {
-                Guesses[i] = new Container(new Point(guess.X + 10, guess.Y + 13 * (i + 1) + i * 46), false, PALETTE);
-                ProgresArray[i] = new Container(new Point(progress.X + 10, progress.Y + 13 * (i + 1) + i * 46), false, PALETTE);
-                if (i < 2) {
-                    Picks[i] = new Container(new Point(pick.X + 10, pick.Y + 13 * (i + 1) + i * 46), true, PALETTE);
-                }
-            }
+            FillContainers();
             Container.temp = 0;
 
             CurrentPickedColor = PALETTE[0];
             ActiveGuess = 0;
+        }
+
+        private Color[] GenerateResultArray() {
+            Color[] ResultColorArray = new Color[4];
+            for (int i = 0; i < 4; i++) {
+                ResultColorArray[i] = PALETTE[Random.Next(8)];
+            }
+
+            return ResultColorArray;
         }
 
         private void ResetCurrentGuess() {
@@ -56,8 +52,19 @@ namespace Mastermind_Clone.Models {
             }
         }
 
+        private void FillContainers() {
+            for (int i = 0; i < 8; i++) {
+                Guesses[i] = new Container(new Point(PanelGuessTopLeft.X + 10, PanelGuessTopLeft.Y + 13 * (i + 1) + i * 46), false, PALETTE);
+                ProgresArray[i] = new Container(new Point(PanelProgressTopLeft.X + 10, PanelProgressTopLeft.Y + 13 * (i + 1) + i * 46), false, PALETTE);
+                if (i < 2) {
+                    Picks[i] = new Container(new Point(PanelPickColor.X + 10, PanelPickColor.Y + 13 * (i + 1) + i * 46), true, PALETTE);
+                }
+            }
+        }
+
         public void Draw(Graphics g) {
-            Brush b = new SolidBrush(Color.LightBlue);
+            Image image = Image.FromFile("../../Imgs/wood.png");
+            Brush b = new TextureBrush(image);
             g.FillRectangle(b, PanelGuessTopLeft.X, PanelGuessTopLeft.Y, 220, 490);
             g.FillRectangle(b, PanelProgressTopLeft.X, PanelProgressTopLeft.Y, 220, 490);
             g.FillRectangle(b, PanelPickColor.X, PanelPickColor.Y, 220, 130);
@@ -68,6 +75,7 @@ namespace Mastermind_Clone.Models {
                     Picks[i].Draw(g);
                 }
             }
+            b.Dispose();
         }
 
         public Color DetectPickCircleHit(Point mouseLocation) {

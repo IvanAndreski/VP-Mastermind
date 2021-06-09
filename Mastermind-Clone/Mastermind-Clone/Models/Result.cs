@@ -1,9 +1,5 @@
 ﻿using System;
-using System.Collections.Generic;
 using System.Drawing;
-using System.Linq;
-using System.Text;
-using System.Threading.Tasks;
 
 namespace Mastermind_Clone.Models {
     public class Result {
@@ -28,28 +24,44 @@ namespace Mastermind_Clone.Models {
         }
 
         public Color[] CreateProgressArray() {
-            Color[] temp = { Color.Empty, Color.Empty, Color.Empty, Color.Empty };
+            Color[] progress = { Color.Empty, Color.Empty, Color.Empty, Color.Empty };
+            int correctColor = 0;
+            int correctPlace = 0;
+            int[] guessDummy = { 0, 0, 0, 0 };
+            int[] answerDummy = { 0, 0, 0, 0 };
+
+            for (int i = 0; i < 4; i++)      
+                if (GuessArray[i] == ResultArray[i]) {
+                    ++correctPlace;
+                    answerDummy[i] = guessDummy[i] = 1;
+                }
 
             for (int i = 0; i < 4; i++) {
-                if (ResultArray[i] == GuessArray[i]) {
-                    temp[i] = Color.IndianRed;
-                }
-                else {
-                    for (int j = 0; j < 4; j++) {
-                        if (j != i) {
-                            if (ResultArray[j] == GuessArray[i]) {
-                                temp[i] = Color.YellowGreen;
-                            }
-                        }
-                    }
-                    if (temp[i] == Color.Empty) {
-                        temp[i] = Color.DarkGray;
-                    }
-                }
+                for (int j = 0; j < 4; j++) {
+                    if (GuessArray[i] == ResultArray[j] && !Convert.ToBoolean(answerDummy[j]) && i != j) {
+                        ++correctColor;
 
+                        answerDummy[j] = guessDummy[j] = 1;
+                        break;
+                    }
+                }
             }
 
-            return temp;
+            for (int i = 0; i < 4; i++) {
+                if (correctPlace > 0) {
+                    progress[i] = Color.IndianRed;
+                    correctPlace--;
+                }
+                else if (correctColor > 0) {
+                    progress[i] = Color.YellowGreen;
+                    correctColor--;
+                }
+                else {
+                    progress[i] = Scene.EmptyCircleColor;
+                }
+            }
+
+            return progress;
         }
 
         public bool CanPerformCheck() {

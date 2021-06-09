@@ -1,20 +1,16 @@
 ﻿using Mastermind_Clone.Models;
 using System;
-using System.Collections.Generic;
-using System.ComponentModel;
-using System.Data;
 using System.Drawing;
-using System.Linq;
-using System.Text;
-using System.Threading.Tasks;
 using System.Windows.Forms;
 
 namespace Mastermind_Clone.Forms {
     public partial class Game : Form {
         public Scene Scene { get; set; }
         public Point LastMouseLocation { get; set; }
-        public Game() {
+        public Panel Panel { get; set; }
+        public Game(Panel panel1) {
             InitializeComponent();
+            Panel = panel1;
             DoubleBuffered = true;
 
             NewGame();
@@ -27,6 +23,36 @@ namespace Mastermind_Clone.Forms {
             verticalProgressBarGameTimeLeft.Value = 0;
 
             timerUpdateProgressBar.Start();
+        }
+
+        private void GameOver() {
+            timerUpdateProgressBar.Stop();
+
+            if (MessageBox.Show("Game Over!", "You Lost! Do you want to play again?", MessageBoxButtons.YesNo) == DialogResult.Yes) {
+                NewGame();
+            }
+            else {
+                GoToMenu();
+            }
+        }
+
+        private void GoToMenu() {
+            Meni menu = new Meni(Panel);
+            menu.TopLevel = false;
+            Panel.Controls.Clear();
+            Panel.Controls.Add(menu);
+            menu.Show();
+        }
+
+        private bool AreYouSure() {
+            timerUpdateProgressBar.Stop();
+            if (MessageBox.Show("Are you sure?", "Are you sure?", MessageBoxButtons.YesNo) == DialogResult.Yes) {
+                return true;
+            }
+            else {
+                timerUpdateProgressBar.Start();
+                return false;
+            }
         }
 
         private void Game_Paint(object sender, PaintEventArgs e) {
@@ -45,7 +71,8 @@ namespace Mastermind_Clone.Forms {
             if (verticalProgressBarGameTimeLeft.Value == verticalProgressBarGameTimeLeft.Maximum) {
                 GameOver();
             }
-            verticalProgressBarGameTimeLeft.Value += 1;
+            if (verticalProgressBarGameTimeLeft.Value + 1 <= verticalProgressBarGameTimeLeft.Maximum)
+                verticalProgressBarGameTimeLeft.Value += 1;
         }
 
         private void Game_MouseClick(object sender, MouseEventArgs e) {
@@ -61,31 +88,34 @@ namespace Mastermind_Clone.Forms {
             Invalidate();
         }
 
-        private void btnCheckGuess_Click(object sender, EventArgs e) {
-            if(Scene.CompareGuessToResult()) {
-                if(MessageBox.Show("Congratulations", "You Won!", MessageBoxButtons.OK) == DialogResult.OK) {
+        private void btnCheck_Click(object sender, EventArgs e) {
+            Invalidate();
+
+            
+            if (Scene.CompareGuessToResult()) {
+                timerUpdateProgressBar.Stop();
+                if (MessageBox.Show("Congratulations", "You Won! Do you want to play again?", MessageBoxButtons.YesNo) == DialogResult.Yes) {
                     NewGame();
                 }
                 else {
-                    //TODO: Go to main menu
+                    GoToMenu();
                 }
             }
-            
-            if(Scene.ActiveGuess == 8) {
+            else if(Scene.ActiveGuess == 8) {
                 GameOver();
             }
 
             Invalidate();
         }
 
-        private void GameOver() {
-            timerUpdateProgressBar.Stop();
-
-            if (MessageBox.Show("Game Over!", "You Lost!", MessageBoxButtons.OK) == DialogResult.OK) {
+        private void btnRestart_Click(object sender, EventArgs e) {
+            if (AreYouSure())
                 NewGame();
-            }
-            else {
-                //TODO: Go to main menu
+        }
+
+        private void btnMenu_Click(object sender, EventArgs e) {
+            if (AreYouSure()) {
+                GoToMenu();
             }
         }
     }

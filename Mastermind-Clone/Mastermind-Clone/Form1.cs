@@ -1,12 +1,4 @@
 ﻿using Mastermind_Clone.Forms;
-using System;
-using System.Collections.Generic;
-using System.ComponentModel;
-using System.Data;
-using System.Drawing;
-using System.Linq;
-using System.Text;
-using System.Threading.Tasks;
 using System.Windows.Forms;
 
 namespace Mastermind_Clone {
@@ -14,14 +6,14 @@ namespace Mastermind_Clone {
         public Form1() {
             InitializeComponent();
 
-            ChangeForm();
+            Meni();
         }
 
-        private void ChangeForm() {
-            Game game = new Game();
-            game.TopLevel = false;
-            panel1.Controls.Add(game);
-            game.Show();
+        public void Meni() {
+            Meni menu = new Meni(panel1);
+            menu.TopLevel = false;
+            panel1.Controls.Add(menu);
+            menu.Show();
         }
     }
 }

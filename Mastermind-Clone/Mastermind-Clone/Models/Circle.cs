@@ -1,12 +1,8 @@
 ﻿using System;
-using System.Collections.Generic;
 using System.Drawing;
-using System.Linq;
-using System.Text;
-using System.Threading.Tasks;
 
 namespace Mastermind_Clone.Models {
-    public abstract class Circle {
+    public class Circle {
         public Point Center { get; set; }
         public Color Color { get; set; }
 

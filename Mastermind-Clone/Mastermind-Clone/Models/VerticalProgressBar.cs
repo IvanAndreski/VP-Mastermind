@@ -9,12 +9,17 @@ using System.Windows.Forms;
 namespace Mastermind_Clone.Models {
     public class VerticalProgressBar : ProgressBar {
 
-        protected override CreateParams CreateParams {
-            get {
-                CreateParams cp = base.CreateParams;
-                cp.Style |= 0x04;
-                return cp;
-            }
+        public VerticalProgressBar() {
+            this.SetStyle(ControlStyles.UserPaint, true);
+        }
+
+        protected override void OnPaint(PaintEventArgs e) {
+            Rectangle rec = e.ClipRectangle;
+
+            rec.Height = (int)(rec.Height * (1 - ((double)Value / Maximum))) - 4;
+            if (ProgressBarRenderer.IsSupported)
+                ProgressBarRenderer.DrawVerticalBar(e.Graphics, e.ClipRectangle);
+            e.Graphics.FillRectangle(Brushes.Blue, 0, 0, rec.Width, rec.Height);
         }
     }
 }
