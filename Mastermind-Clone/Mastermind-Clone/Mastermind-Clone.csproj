@@ -66,6 +66,7 @@
     <Compile Include="Forms\Meni.Designer.cs">
       <DependentUpon>Meni.cs</DependentUpon>
     </Compile>
+    <Compile Include="Models\AudioPlayer.cs" />
     <Compile Include="Models\Circle.cs" />
     <Compile Include="Models\Container.cs" />
     <Compile Include="Models\Result.cs" />
@@ -108,6 +109,18 @@
     <None Include="App.config" />
   </ItemGroup>
   <ItemGroup>
+    <Content Include="audio\end\Braum.end1.wav" />
+    <Content Include="audio\end\Braum.end2.wav" />
+    <Content Include="audio\end\Braum.end3.wav" />
+    <Content Include="audio\end\Braum.end4.wav" />
+    <Content Include="audio\move\Braum.move1.wav" />
+    <Content Include="audio\move\Braum.move2.wav" />
+    <Content Include="audio\move\Braum.move3.wav" />
+    <Content Include="audio\start\Braum.start1.wav" />
+    <Content Include="audio\start\Braum.start2.wav" />
+    <Content Include="audio\start\Braum.start3.wav" />
+    <Content Include="audio\start\Braum.start4.wav" />
+    <Content Include="audio\start\Braum.start5.wav" />
     <Content Include="bin\Debug\Mastermind-Clone.exe" />
     <Content Include="bin\Debug\Mastermind-Clone.pdb" />
     <Content Include="Imgs\ice.png" />

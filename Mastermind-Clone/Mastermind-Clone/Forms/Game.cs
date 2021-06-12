@@ -8,13 +8,15 @@ using WMPLib;
 
 namespace Mastermind_Clone.Forms {
     public partial class Game : Form {
+        public AudioPlayer Player { get; set; }
         public Scene Scene { get; set; }
         public Point LastMouseLocation { get; set; }
         public Panel Panel { get; set; }
-        public Game(Panel panel1) {
+        public Game(Panel panel1, AudioPlayer player) {
             InitializeComponent();
             Panel = panel1;
             DoubleBuffered = true;
+            Player = player;
 
             NewGame();
         }
@@ -24,6 +26,8 @@ namespace Mastermind_Clone.Forms {
 
             Scene = new Scene(new Point(10, 5), new Point(250, 5), new Point(547, 365));
             verticalProgressBarGameTimeLeft.Value = 0;
+
+            Player.PlayStart();
 
             timerUpdateProgressBar.Start();
         }
@@ -40,7 +44,7 @@ namespace Mastermind_Clone.Forms {
         }
 
         private void GoToMenu() {
-            Meni menu = new Meni(Panel);
+            Meni menu = new Meni(Panel, Player);
             menu.TopLevel = false;
             Panel.Controls.Clear();
             Panel.Controls.Add(menu);
@@ -93,13 +97,10 @@ namespace Mastermind_Clone.Forms {
 
         private void btnCheck_Click(object sender, EventArgs e) {
             Invalidate();
-
             
             if (Scene.CompareGuessToResult()) {
                 timerUpdateProgressBar.Stop();
-                WindowsMediaPlayer player = new WindowsMediaPlayer();
-                player.URL = "../../Is it the moustache.ogg";
-                player.controls.play();
+                Player.PlayEnd();
                 if (MessageBox.Show("Congratulations", "You Won! Do you want to play again?", MessageBoxButtons.YesNo) == DialogResult.Yes) {
                     NewGame();
                 }
@@ -111,6 +112,7 @@ namespace Mastermind_Clone.Forms {
                 GameOver();
             }
 
+            Player.PlayMove();
             Invalidate();
         }
 
