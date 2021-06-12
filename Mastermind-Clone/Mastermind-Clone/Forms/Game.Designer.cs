@@ -68,6 +68,7 @@ namespace Mastermind_Clone.Forms {
             // btnCheck
             // 
             this.btnCheck.BackColor = System.Drawing.Color.Transparent;
+            this.btnCheck.Cursor = System.Windows.Forms.Cursors.Hand;
             this.btnCheck.ErrorImage = ((System.Drawing.Image)(resources.GetObject("btnCheck.ErrorImage")));
             this.btnCheck.Image = ((System.Drawing.Image)(resources.GetObject("btnCheck.Image")));
             this.btnCheck.Location = new System.Drawing.Point(593, 207);
@@ -80,6 +81,7 @@ namespace Mastermind_Clone.Forms {
             // btnRestart
             // 
             this.btnRestart.BackColor = System.Drawing.Color.Transparent;
+            this.btnRestart.Cursor = System.Windows.Forms.Cursors.Hand;
             this.btnRestart.ErrorImage = ((System.Drawing.Image)(resources.GetObject("btnRestart.ErrorImage")));
             this.btnRestart.Image = ((System.Drawing.Image)(resources.GetObject("btnRestart.Image")));
             this.btnRestart.Location = new System.Drawing.Point(593, 243);
@@ -92,6 +94,7 @@ namespace Mastermind_Clone.Forms {
             // btnMenu
             // 
             this.btnMenu.BackColor = System.Drawing.Color.Transparent;
+            this.btnMenu.Cursor = System.Windows.Forms.Cursors.Hand;
             this.btnMenu.ErrorImage = ((System.Drawing.Image)(resources.GetObject("btnMenu.ErrorImage")));
             this.btnMenu.Image = ((System.Drawing.Image)(resources.GetObject("btnMenu.Image")));
             this.btnMenu.Location = new System.Drawing.Point(593, 279);

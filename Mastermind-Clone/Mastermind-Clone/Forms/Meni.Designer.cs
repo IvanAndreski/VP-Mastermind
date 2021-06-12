@@ -33,6 +33,7 @@ namespace Mastermind_Clone.Forms {
             // btnNewGame
             // 
             this.btnNewGame.BackgroundImage = ((System.Drawing.Image)(resources.GetObject("btnNewGame.BackgroundImage")));
+            this.btnNewGame.Cursor = System.Windows.Forms.Cursors.Hand;
             this.btnNewGame.FlatStyle = System.Windows.Forms.FlatStyle.Flat;
             this.btnNewGame.Font = new System.Drawing.Font("Calibri", 18F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
             this.btnNewGame.ForeColor = System.Drawing.SystemColors.ButtonFace;
@@ -47,6 +48,7 @@ namespace Mastermind_Clone.Forms {
             // btnInstructions
             // 
             this.btnInstructions.BackgroundImage = ((System.Drawing.Image)(resources.GetObject("btnInstructions.BackgroundImage")));
+            this.btnInstructions.Cursor = System.Windows.Forms.Cursors.Hand;
             this.btnInstructions.FlatStyle = System.Windows.Forms.FlatStyle.Flat;
             this.btnInstructions.Font = new System.Drawing.Font("Calibri", 18F);
             this.btnInstructions.ForeColor = System.Drawing.SystemColors.ButtonFace;
@@ -61,6 +63,7 @@ namespace Mastermind_Clone.Forms {
             // btnExitGame
             // 
             this.btnExitGame.BackgroundImage = ((System.Drawing.Image)(resources.GetObject("btnExitGame.BackgroundImage")));
+            this.btnExitGame.Cursor = System.Windows.Forms.Cursors.Hand;
             this.btnExitGame.FlatStyle = System.Windows.Forms.FlatStyle.Flat;
             this.btnExitGame.Font = new System.Drawing.Font("Calibri", 18F);
             this.btnExitGame.ForeColor = System.Drawing.SystemColors.ButtonFace;

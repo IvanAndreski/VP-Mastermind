@@ -1,7 +1,10 @@
 ﻿using Mastermind_Clone.Models;
 using System;
 using System.Drawing;
+using System.IO;
+using System.Media;
 using System.Windows.Forms;
+using WMPLib;
 
 namespace Mastermind_Clone.Forms {
     public partial class Game : Form {
@@ -94,6 +97,9 @@ namespace Mastermind_Clone.Forms {
             
             if (Scene.CompareGuessToResult()) {
                 timerUpdateProgressBar.Stop();
+                WindowsMediaPlayer player = new WindowsMediaPlayer();
+                player.URL = "../../Is it the moustache.ogg";
+                player.controls.play();
                 if (MessageBox.Show("Congratulations", "You Won! Do you want to play again?", MessageBoxButtons.YesNo) == DialogResult.Yes) {
                     NewGame();
                 }

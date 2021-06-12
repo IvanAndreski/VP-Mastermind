@@ -1,0 +1,9 @@
+Help Braum unlock the gate and save the poros:
+- The goal of the game is to guess the correct sequence of  4 coloured circles.
+- Every circle is filled with 1 out of 8 colours(Red, Green, Yellow, Orange, Brown, Purple, Blue, Pink).
+- You have 8 guesses on a time of 100 seconds.
+- For each guess you get feedback:
+ * the number of correctly guessed colours (presented with red circles)
+ * the number of colours that were guessed on the wrong position but are present in the sequence (presented with yellow circles)
+ * the red feedback circles come before the yellow feedback circles
+ * the position of the feedback circles is not indicative of the position of the correctly guessed colour

@@ -49,7 +49,7 @@ namespace Mastermind_Clone {
             this.MinimumSize = new System.Drawing.Size(800, 540);
             this.Name = "Form1";
             this.StartPosition = System.Windows.Forms.FormStartPosition.CenterScreen;
-            this.Text = "Form1";
+            this.Text = "Brom";
             this.ResumeLayout(false);
             this.PerformLayout();
 

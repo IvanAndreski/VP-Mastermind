@@ -1,4 +1,5 @@
 ﻿using System;
+using System.IO;
 using System.Windows.Forms;
 
 namespace Mastermind_Clone.Forms {
@@ -19,7 +20,8 @@ namespace Mastermind_Clone.Forms {
         }
 
         private void btnInstructions_Click(object sender, EventArgs e) {
-
+            String instructions = File.ReadAllText("../../Instructions.txt");
+            MessageBox.Show(instructions, "How to Play", MessageBoxButtons.OK);
         }
 
         private void btnExitGame_Click(object sender, EventArgs e) {
