@@ -81,7 +81,7 @@ namespace Mastermind_Clone.Models {
 ## Изглед и упатство
 
 При стартување на апликацијата се отвара почетниот прозорец.
-![Project Image](Main Menu.jpg)
+![Project Image](https://github.com/IvanAndreski/VP-Mastermind/blob/ad5b2048c3ea2d92439d4252a721258c5bc42d5c/Screenshots/Main%20Menu.jpg)
 
 Тука имаме 3 опции: New Game, Instructions, Exit Game.
 Со избор на копчето New Game се започнува нова игра.
