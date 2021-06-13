@@ -37,3 +37,6 @@ C:\Users\Dimitar\Documents\GitHub\VP-Mastermind\Mastermind-Clone\Mastermind-Clon
 C:\Users\Dimitar\Documents\GitHub\VP-Mastermind\Mastermind-Clone\Mastermind-Clone\obj\Debug\Mastermind-Clone.csproj.ResolveComReference.cache
 F:\Ivan\documents\Skolo\Finki\semestar_4\VP\Project\Mastermind-Clone\Mastermind-Clone\obj\Debug\Interop.WMPLib.dll
 F:\Ivan\documents\Skolo\Finki\semestar_4\VP\Project\Mastermind-Clone\Mastermind-Clone\obj\Debug\Mastermind-Clone.csproj.ResolveComReference.cache
+D:\Git\Repositories\VP-Mastermind\Mastermind-Clone\Mastermind-Clone\obj\Debug\Interop.WMPLib.dll
+D:\Git\Repositories\VP-Mastermind\Mastermind-Clone\Mastermind-Clone\obj\Debug\Mastermind-Clone.csproj.ResolveComReference.cache
+D:\Git\Repositories\VP-Mastermind\Mastermind-Clone\Mastermind-Clone\obj\Debug\Mastermind_Clone.Forms.Meni.resources

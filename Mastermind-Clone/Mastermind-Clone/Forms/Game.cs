@@ -35,7 +35,7 @@ namespace Mastermind_Clone.Forms {
         private void GameOver() {
             timerUpdateProgressBar.Stop();
 
-            if (MessageBox.Show("Game Over!", "You Lost! Do you want to play again?", MessageBoxButtons.YesNo) == DialogResult.Yes) {
+            if (MessageBox.Show("You Lost! Do you want to play again?", "Game Over!", MessageBoxButtons.YesNo) == DialogResult.Yes) {
                 NewGame();
             }
             else {
@@ -53,7 +53,7 @@ namespace Mastermind_Clone.Forms {
 
         private bool AreYouSure() {
             timerUpdateProgressBar.Stop();
-            if (MessageBox.Show("Are you sure?", "Are you sure?", MessageBoxButtons.YesNo) == DialogResult.Yes) {
+            if (MessageBox.Show("Braum still needs your help, are you sure you want to back out now?", "Are you sure?", MessageBoxButtons.YesNo) == DialogResult.Yes) {
                 return true;
             }
             else {
@@ -101,7 +101,7 @@ namespace Mastermind_Clone.Forms {
             if (Scene.CompareGuessToResult()) {
                 timerUpdateProgressBar.Stop();
                 Player.PlayEnd();
-                if (MessageBox.Show("Congratulations", "You Won! Do you want to play again?", MessageBoxButtons.YesNo) == DialogResult.Yes) {
+                if (MessageBox.Show("You unlocked the gate successfuly and helped Braum rescue the poros like a true hero! Do you want to play again?", "Congratulations!", MessageBoxButtons.YesNo) == DialogResult.Yes) {
                     NewGame();
                 }
                 else {
