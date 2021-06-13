@@ -85,7 +85,7 @@ namespace Mastermind_Clone.Models {
 
 Тука имаме 3 опции: New Game, Instructions, Exit Game.
 Со избор на копчето New Game се започнува нова игра.
-![Project Image](bar.io_logo.png)
+![Project Image](https://github.com/IvanAndreski/VP-Mastermind/blob/48c1d2f57863085d6319ed5a67f71d95585dd26a/Screenshots/New%20Game%20Empty.jpg)
 
 Во овој прозорец можеме да избереме некоја од 8те бои и со таа боја да ги боиме кругчињата од следниот обид. Кругчето околу курсорот се обојува со бојата која ни е селектирана.
 Со клик на копчето Check се проверува тековниот обид и соодветно за него добиваме повратана информација.
