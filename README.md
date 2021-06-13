@@ -81,7 +81,7 @@ namespace Mastermind_Clone.Models {
 ## Изглед и упатство
 
 При стартување на апликацијата се отвара почетниот прозорец.
-![Project Image](bar.io_logo.png)
+![Project Image](Main Menu.jpg)
 
 Тука имаме 3 опции: New Game, Instructions, Exit Game.
 Со избор на копчето New Game се започнува нова игра.
