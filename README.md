@@ -2,7 +2,7 @@
 Proekt za vizuelno programiranje
 # Mastermind
 
-![Project Image](bar.io_logo.png)
+![Project Image](https://github.com/IvanAndreski/VP-Mastermind/blob/cc8407fe85569c338908f194c55cffaa6483ed20/Screenshots/Logo.png)
 
 ---
 
